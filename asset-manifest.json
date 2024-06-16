@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/progect.githab.io/static/css/main.e75dd729.css",
+    "main.js": "/progect.githab.io/static/js/main.bff4fd6f.js",
+    "index.html": "/progect.githab.io/index.html",
+    "main.e75dd729.css.map": "/progect.githab.io/static/css/main.e75dd729.css.map",
+    "main.bff4fd6f.js.map": "/progect.githab.io/static/js/main.bff4fd6f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e75dd729.css",
+    "static/js/main.bff4fd6f.js"
+  ]
+}
