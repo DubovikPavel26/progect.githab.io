@@ -1,7 +1,7 @@
 {
   "name": "musem",
   "version": "0.1.0",
-  "homepage": "https://dubovikpavel26.github.io/res.github.io", 
+  "homepage": "https://Dubovikpavel26.github.io/result", 
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
