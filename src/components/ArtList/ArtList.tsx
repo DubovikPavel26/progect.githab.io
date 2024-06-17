@@ -34,6 +34,7 @@ const ArtList = (props: ArtListProps) => {
 
     useEffect(() => {
         const fetchArtworks = async () => {
+            
             try {
                 let url;
 
