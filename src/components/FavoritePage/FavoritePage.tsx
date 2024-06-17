@@ -35,9 +35,9 @@ const FavoritePage = () => {
                             <FavoritePageLink to={`/artworks/${artwork.id}`}>
                                 <FavoriteImage src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/100,/0/default.jpg`} alt={artwork.title} onClick={() => setSelectedItem(artwork)} />
                             </FavoritePageLink>
-                            <RemoveButton onClick={() => removeFromFavorites(artwork.id)}>Remove</RemoveButton>
                             <FavoriteItemTitle>{artwork.title}</FavoriteItemTitle>
                             <FavoriteItemDescr>{artwork.artist_display}</FavoriteItemDescr>
+                            <RemoveButton onClick={() => removeFromFavorites(artwork.id)}>Remove</RemoveButton>
                         </FavoriteItem>
                     )) 
                 }

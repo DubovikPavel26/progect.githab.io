@@ -8,10 +8,11 @@ type SortButtonsPropsType = {
 }
 
 const SortButtons = (props: SortButtonsPropsType) => {
+    const {handleSortByAscYear, handleSortByDescYear} = props
     return (
         <Buttons>
-            <Button name='Sorting by ascending year of creation' onClick={props.handleSortByAscYear} />
-            <Button name='Sorting in descending order of the year of creation' onClick={props.handleSortByDescYear} />
+            <Button name='Sorting by ascending year of creation' onClick={handleSortByAscYear} />
+            <Button name='Sorting in descending order of the year of creation' onClick={handleSortByDescYear} />
         </Buttons>
     );
 };

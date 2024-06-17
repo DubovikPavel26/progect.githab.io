@@ -10,8 +10,8 @@ padding: 8px;
 border-radius: 8px;
 border: none;
 @media (max-width:576px) {
-    width: 160px;
-    font-size: 11px;
+    width: 140px;
+    font-size: 12px;
   }
 
 

@@ -6,8 +6,11 @@ type ButtonPropsType = {
     onClick: () => void
 }
 const Button = (props: ButtonPropsType) => {
+
+    const {name, onClick} = props
+    
     return (
-        <SortButton onClick={props.onClick}>{props.name}</SortButton>
+        <SortButton onClick={onClick}>{name}</SortButton>
     );
 };
 

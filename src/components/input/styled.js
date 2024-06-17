@@ -24,7 +24,7 @@ margin-bottom: 120px;
   }
 
   @media (max-width:576px) {
-        width: 300px;
+        width: 250px;
         height: 40px;
   }
 `

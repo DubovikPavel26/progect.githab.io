@@ -7,21 +7,19 @@ export const FooterWrapper = styled.div`
     align-items: center;
     @media (max-width: 1439px) {
         padding: 32px 0px;
-        justify-content: space-around;
         
-  }
-
-  @media (max-width:576px) {
-        flex-direction: column;
   }
 `
 
 export const LogoMusem = styled.div`
     width: 206px;
     height: 63px;
+    svg{
+      width: 100%;
+      height: 100%;
+    }
     @media (max-width:576px) {
-        width: 150px;
-        margin-bottom: 40px;
+        width: 130px;
   }
 
 `;
@@ -29,7 +27,11 @@ export const LogoMusem = styled.div`
 export const LogoModsen = styled.div`
     width: 164px;
     height: 59px;
+    svg{
+      width: 100%;
+      height: 100%;
+    }
     @media (max-width:576px) {
-        width: 150px;
+        width: 130px;
   }
 `

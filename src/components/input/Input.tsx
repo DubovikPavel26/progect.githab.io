@@ -7,7 +7,8 @@ type InputPropsType = {
 }
 
 const Input = (props: InputPropsType) => {
-    const [inputValue, setInputValue] = useState<string>(props.searchTerm);
+    const{searchTerm, onSearchChange } = props
+    const [inputValue, setInputValue] = useState<string>(searchTerm);
 
     const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -17,8 +18,7 @@ const Input = (props: InputPropsType) => {
             setInputValue('')
             return;
         }
-
-        props.onSearchChange(value);
+        onSearchChange(value);
     }
 
     return (

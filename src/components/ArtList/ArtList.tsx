@@ -17,7 +17,6 @@ export interface Artwork {
 
 interface ArtListProps {
     searchTerm: string;
-
     setIsLoading: (value: boolean) => void;
     handleArtWorkClick: (artwork: Artwork) => void;
     sortByYear: 'asc' | 'desc' | null;
@@ -26,6 +25,8 @@ interface ArtListProps {
 }
 
 const ArtList = (props: ArtListProps) => {
+
+    const {searchTerm, setIsLoading, handleArtWorkClick, sortByYear, handleSortByAscYear, handleSortByDescYear} = props
     const [artworks, setArtworks] = useState<Artwork[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [totalPages, setTotalPages] = useState<number>(1); 
@@ -36,10 +37,10 @@ const ArtList = (props: ArtListProps) => {
             try {
                 let url;
 
-                if (props.searchTerm === '') {
+                if (searchTerm === '') {
                     url = `https://api.artic.edu/api/v1/artworks?fields=id,title,image_id,artist_display,date_start,dimensions,medium_display&page=${currentPage}&limit=${limit}`;
                 } else {
-                    url = `https://api.artic.edu/api/v1/artworks/search?q=${props.searchTerm}&fields=id,title,image_id,artist_display,date_start,dimensions,medium_display&page=${currentPage}&limit=${limit}`;
+                    url = `https://api.artic.edu/api/v1/artworks/search?q=${searchTerm}&fields=id,title,image_id,artist_display,date_start,dimensions,medium_display&page=${currentPage}&limit=${limit}`;
                 }
                 const response = await fetch(url);
                 const data = await response.json();
@@ -54,7 +55,7 @@ const ArtList = (props: ArtListProps) => {
                     }
 
                     setArtworks(filteredArtworks);
-                    props.setIsLoading(false);
+                    setIsLoading(false);
 
                     const totalPagesFromApi = Math.ceil(data.pagination.total / limit);
                     setTotalPages(totalPagesFromApi);
@@ -67,7 +68,7 @@ const ArtList = (props: ArtListProps) => {
         };
 
         fetchArtworks();
-    }, [props.searchTerm, props.sortByYear, currentPage, props.setIsLoading, limit]);
+    }, [searchTerm, sortByYear, currentPage, setIsLoading, limit]);
 
     const paginate = (pageNumber: number) => {
         setCurrentPage(pageNumber);
@@ -78,11 +79,11 @@ const ArtList = (props: ArtListProps) => {
             <p className='gallery__subtitle'>Topics for you</p>
             <h2 className='gallery__title'>Our special gallery</h2>
 
-            <SortButtons handleSortByAscYear={props.handleSortByAscYear} handleSortByDescYear={props.handleSortByDescYear} />
+            <SortButtons handleSortByAscYear={handleSortByAscYear} handleSortByDescYear={handleSortByDescYear} />
 
             <div className="artworks">
                 {artworks.map((artwork) => (
-                    <div key={artwork.id} className="artwork" onClick={() => props.handleArtWorkClick(artwork)}>
+                    <div key={artwork.id} className="artwork" onClick={() => handleArtWorkClick(artwork)}>
                         <Link to={`/artworks/${artwork.id}`}>
                             <img src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`} alt={artwork.title} />
                         </Link>

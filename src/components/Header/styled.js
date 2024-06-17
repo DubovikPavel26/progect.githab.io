@@ -16,7 +16,7 @@ export const HeaderSubWrapper = styled.div`
     margin: 0 auto;
     position: relative;
     @media (max-width: 1439px) {
-        justify-content: space-around;
+        
   }
 
   @media (max-width: 1200px) {
@@ -43,9 +43,12 @@ export const HeaderSubWrapper = styled.div`
 export const Logo = styled.div`
     width: 206px;
     height: 63px;
+    svg{
+      width: 100%;
+      height: 100%;
+    }
     @media (max-width:576px) {
-        width: 60px;
-        height: 40px;
+        width: 160px;
   }
 `;
 
@@ -87,7 +90,8 @@ export const Burger = styled.div`
         outline: none;
         cursor: pointer;
         position: absolute;
-        right: 8px;
+        right: 12px;
+        top: 60px;
 
         div {
             width: 30px;

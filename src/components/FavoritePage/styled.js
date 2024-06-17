@@ -75,6 +75,7 @@ export const FavoriteItem = styled.div`
     padding: 8px;
     height: 100%;
     margin: 0 auto;
+    position: relative;
 `;
 
 export const FavoriteImage = styled.img`
@@ -82,6 +83,7 @@ export const FavoriteImage = styled.img`
     height: 150px; 
     cursor: pointer;
     object-fit: cover;
+   
 `;
 
 export const RemoveButton = styled.button`
@@ -93,6 +95,8 @@ export const RemoveButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    bottom: 4px;
 `;
 
 export const FavoriteDescription = styled.p`

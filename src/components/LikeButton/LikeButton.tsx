@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { Like } from './styled';
 import { useSelectedItem } from '../Context/SelectedItemContext.tsx';
+import { Artwork } from '../ArtList/ArtList.tsx';
 
-const LikeButton = ({ artwork }) => {
+type LikeButtonPropsType = {
+    artwork: Artwork
+}
+
+const LikeButton = (props: LikeButtonPropsType) => {
+    const {artwork} = props
     const { addToFavorites, removeFromFavorites, favorites } = useSelectedItem();
     const [isActive, setIsActive] = useState(false);
 
