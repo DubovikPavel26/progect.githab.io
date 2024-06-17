@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from './components/MainPage/MainPage.tsx';
 import FavoritePage from './components/FavoritePage/FavoritePage.tsx';
@@ -14,7 +14,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.tsx';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
         <ErrorBoundary>
         <Header />
       <div className='wrapper'>
@@ -28,7 +28,7 @@ function App() {
         <Footer />
       </div>
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
 
   );
 
