@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent,useEffect } from 'react';
 import { InputStyles } from './styled'
 
 type InputPropsType = {
@@ -9,16 +9,25 @@ type InputPropsType = {
 const Input = (props: InputPropsType) => {
     const{searchTerm, onSearchChange } = props
     const [inputValue, setInputValue] = useState<string>(searchTerm);
+    const debounceDelay = 600;
+    const [lastTypedValue, setLastTypedValue] = useState<string>(inputValue);
+
+    useEffect(() => {
+        const debounceSearch = setTimeout(() => {
+            if (inputValue === lastTypedValue) {
+                onSearchChange(inputValue.trim()); 
+            }
+        }, debounceDelay);
+        return () => {
+            clearTimeout(debounceSearch);
+        };
+    }, [inputValue, lastTypedValue, onSearchChange, debounceDelay]);
+
 
     const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setInputValue(value);
-        
-        if (value.trim() === '') {
-            setInputValue('')
-            return;
-        }
-        onSearchChange(value);
+        setLastTypedValue(value);
     }
 
     return (
