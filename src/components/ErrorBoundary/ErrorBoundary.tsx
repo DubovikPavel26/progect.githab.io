@@ -1,7 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
 type ErrorBoundaryProps = {
-  children: ReactNode; 
+  children: ReactNode;
 };
 
 type ErrorBoundaryState = {
@@ -25,10 +25,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <h1>Что-то пошло не так.</h1>
-          <p>Пожалуйста, перезагрузите страницу.</p>
-        </div>
+        <h1>Something went wrong. Please try again later.</h1>
       );
     }
 

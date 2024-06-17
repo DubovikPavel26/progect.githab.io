@@ -17,6 +17,7 @@ export interface Artwork {
 
 interface ArtListProps {
     searchTerm: string;
+
     setIsLoading: (value: boolean) => void;
     handleArtWorkClick: (artwork: Artwork) => void;
     sortByYear: 'asc' | 'desc' | null;

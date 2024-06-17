@@ -15,7 +15,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.tsx';
 function App() {
   return (
     <HashRouter>
-        {/* <ErrorBoundary> */}
+        <ErrorBoundary>
         <Header />
       <div className='wrapper'>
         <SelectedItemProvider>
@@ -27,7 +27,7 @@ function App() {
         </SelectedItemProvider>
         <Footer />
       </div>
-      {/* </ErrorBoundary> */}
+      </ErrorBoundary>
     </HashRouter>
 
   );

@@ -7,13 +7,14 @@ import { useSelectedItem } from '../Context/SelectedItemContext.tsx';
 
 const MainPage = () => {
     const [searchTerm, setSearchTerm] = useState<string>('')
-    const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const [sortByYear, setSortByYear] = useState<'asc' | 'desc' | null>(null);
     const { setSelectedItem } = useSelectedItem();
 
 
     const handleSearchChange = (value: string) => {
         setSearchTerm(value);
+        setIsLoading(true);
     }
 
     const handleArtWorkClick = (artwork: Artwork) => {
