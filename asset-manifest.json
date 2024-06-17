@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/progect.githab.io/static/css/main.e75dd729.css",
-    "main.js": "/progect.githab.io/static/js/main.4f8091ba.js",
+    "main.js": "/progect.githab.io/static/js/main.633e4125.js",
     "index.html": "/progect.githab.io/index.html",
     "main.e75dd729.css.map": "/progect.githab.io/static/css/main.e75dd729.css.map",
-    "main.4f8091ba.js.map": "/progect.githab.io/static/js/main.4f8091ba.js.map"
+    "main.633e4125.js.map": "/progect.githab.io/static/js/main.633e4125.js.map"
   },
   "entrypoints": [
     "static/css/main.e75dd729.css",
-    "static/js/main.4f8091ba.js"
+    "static/js/main.633e4125.js"
   ]
 }
